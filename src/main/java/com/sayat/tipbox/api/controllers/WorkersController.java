@@ -4,6 +4,7 @@ import com.sayat.tipbox.business.abstracts.WorkerService;
 import com.sayat.tipbox.core.utilities.results.DataResult;
 import com.sayat.tipbox.core.utilities.results.Result;
 import com.sayat.tipbox.entities.concretes.Worker;
+import com.sayat.tipbox.entities.dtos.WorkerWithDepartmentDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -67,5 +68,10 @@ public class WorkersController {
     @GetMapping("/getAllDesc")
     public DataResult<List<Worker>> getAllSorted(){
         return this.workerService.getAllSorted();
+    }
+
+    @GetMapping("/getWorkerWithDepartmentDetails")
+    public DataResult<List<WorkerWithDepartmentDto>> getWorkerWithDepartmentDetails(){
+        return this.workerService.getWorkerWithDepartmentDetails();
     }
 }

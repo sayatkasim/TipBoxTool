@@ -22,6 +22,8 @@ public class Worker {
     private String workerName;
     @Column(name="worker_surname")
     private String workerSurname;
+    @Column(name="identityNumber")
+    private String identityNumber;
 
     @ManyToOne()
     @JoinColumn(name = "department_id")

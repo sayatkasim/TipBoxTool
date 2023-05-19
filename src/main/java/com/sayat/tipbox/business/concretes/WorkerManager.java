@@ -7,6 +7,7 @@ import com.sayat.tipbox.core.utilities.results.SuccessDataResult;
 import com.sayat.tipbox.core.utilities.results.SuccessResult;
 import com.sayat.tipbox.dataAccess.abstracts.WorkerDao;
 import com.sayat.tipbox.entities.concretes.Worker;
+import com.sayat.tipbox.entities.dtos.WorkerWithDepartmentDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -89,5 +90,11 @@ public class WorkerManager implements WorkerService {
     public DataResult<List<Worker>> getByNameAndDepartment(String workerName, int departmentId) {
         return new SuccessDataResult<List<Worker>>(this.workerDao.getByNameAndDepartment(workerName,departmentId),
                         "Çalışanlar Listelendi");
+    }
+
+    @Override
+    public DataResult<List<WorkerWithDepartmentDto>> getWorkerWithDepartmentDetails() {
+        return new SuccessDataResult<List<WorkerWithDepartmentDto>>(this.workerDao.getWorkerWithDepartmentDetails(),
+                "Data Listelendi");
     }
 }

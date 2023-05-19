@@ -3,7 +3,7 @@ package com.sayat.tipbox.business.abstracts;
 import com.sayat.tipbox.core.utilities.results.DataResult;
 import com.sayat.tipbox.core.utilities.results.Result;
 import com.sayat.tipbox.entities.concretes.Worker;
-import org.springframework.data.jpa.repository.Query;
+import com.sayat.tipbox.entities.dtos.WorkerWithDepartmentDto;
 
 import java.util.List;
 
@@ -19,4 +19,5 @@ public interface WorkerService {
     DataResult<List<Worker>> getByWorkerNameContains(String workerName);
     DataResult<List<Worker>> getByWorkerNameStartsWith (String workerName);
     DataResult<List<Worker>> getByNameAndDepartment (String workerName, int departmentId);
+    DataResult<List<WorkerWithDepartmentDto>> getWorkerWithDepartmentDetails();
 }
