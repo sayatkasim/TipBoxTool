@@ -15,7 +15,7 @@ public class UserManager implements UserService {
 
     private UserDao userDao;
     public UserManager(UserDao userDao) {
-        this.userDao = userDao;
+        super();this.userDao = userDao;
     }
 
     @Override
