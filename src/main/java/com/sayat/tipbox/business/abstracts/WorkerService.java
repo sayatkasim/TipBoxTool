@@ -12,6 +12,8 @@ public interface WorkerService {
     DataResult<List<Worker>> getAll(int pageNo, int pageSize);
     DataResult<List<Worker>> getAllSorted();
     Result add(Worker worker);
+    Result update(Worker worker);
+    Result delete (Worker worker);
     DataResult<Worker> getByWorkerName(String workerName);
     DataResult<Worker> getByWorkerNameAndDepartmentId(String workerName, int departmentId);
     DataResult<List<Worker>> getByWorkerNameOrDepartmentId(String workerName, int departmentId);

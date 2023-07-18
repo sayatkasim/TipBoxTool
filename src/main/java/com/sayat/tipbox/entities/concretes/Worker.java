@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -29,4 +31,6 @@ public class Worker {
     @JoinColumn(name = "department_id")
     private Department department;
 
+    @OneToMany(mappedBy = "workingHour")
+    private List<WorkingHour> workingHours;
 }

@@ -52,6 +52,18 @@ public class WorkerManager implements WorkerService {
     }
 
     @Override
+    public Result update(Worker worker) {
+        this.workerDao.save(worker);
+        return new SuccessResult("Çalışan güncellendi");
+    }
+
+    @Override
+    public Result delete(Worker worker) {
+        this.workerDao.delete(worker);
+        return new SuccessResult("Çalışan Silindi");
+    }
+
+    @Override
     public DataResult<Worker> getByWorkerName(String workerName) {
         return new SuccessDataResult<Worker>(this.workerDao.getByWorkerName(workerName),"Çalışanlar Listelendi");
     }

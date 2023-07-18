@@ -9,4 +9,7 @@ public interface DepartmentService {
     List<Department> getAll();
 
     Result add (Department department);
+
+    Result delete(Department department);
+    Result update (Department department);
 }

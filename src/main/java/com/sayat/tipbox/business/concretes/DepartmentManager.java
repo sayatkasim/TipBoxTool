@@ -26,4 +26,16 @@ public class DepartmentManager implements DepartmentService {
         this.departmentDao.save(department);
         return new SuccessResult("Departman eklendi");
     }
+
+    @Override
+    public Result delete(Department department) {
+        this.departmentDao.delete(department);
+        return new SuccessResult("Departman Silindi");
+    }
+
+    @Override
+    public Result update(Department department) {
+        this.departmentDao.save(department);
+        return new SuccessResult("Departman Güncellendi");
+    }
 }

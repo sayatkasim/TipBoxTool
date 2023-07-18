@@ -25,4 +25,9 @@ public class DepartmentController {
     public Result add(@RequestBody Department department){
         return this.departmentService.add(department);
     }
+
+    @DeleteMapping("/delete")
+    Result delete(@RequestBody Department department){return this.departmentService.delete(department);}
+    @PutMapping("/update")
+    Result update (@RequestBody Department department){return this.departmentService.update(department);}
 }

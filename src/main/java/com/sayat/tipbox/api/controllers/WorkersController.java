@@ -74,4 +74,13 @@ public class WorkersController {
     public DataResult<List<WorkerWithDepartmentDto>> getWorkerWithDepartmentDetails(){
         return this.workerService.getWorkerWithDepartmentDetails();
     }
+
+    @DeleteMapping ("/delete")
+    public Result delete(@RequestBody Worker worker){
+        return this.workerService.delete(worker);
+    }
+    @PutMapping("/update")
+    public Result update(@RequestBody Worker worker){
+        return this.workerService.update(worker);
+    }
 }
